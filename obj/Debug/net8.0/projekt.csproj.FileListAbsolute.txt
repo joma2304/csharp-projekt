@@ -12,3 +12,4 @@
 /Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.pdb
 /Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.genruntimeconfig.cache
 /Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/ref/projekt.dll
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.sourcelink.json

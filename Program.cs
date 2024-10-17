@@ -8,6 +8,15 @@ namespace HangmanProject
     {
         static void Main(string[] args)
         {
+            // Huvudloop för spelet
+            do
+            {
+                PlayGame(); // Starta spelet
+            } while (PlayAgain()); // Kolla om spelaren vill spela igen
+        }
+
+        static void PlayGame()
+        {
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
@@ -32,7 +41,7 @@ namespace HangmanProject
             while (amountOfTimesWrong != 6 && currentLettersRight != lengthOfWordToGuess)
             {
                 Console.Clear(); // Rensa skärmen
-                Console.WriteLine("Välkommen till Hänga Gubbe :)");
+                Console.WriteLine("Välkommen till Hängagubbe :)");
                 Console.WriteLine("------------------------------");
                 PrintHang.PrintHangman(amountOfTimesWrong); // Rita gubben
 
@@ -85,29 +94,46 @@ namespace HangmanProject
                 // Kontrollera om spelaren har vunnit
                 currentLettersRight = PrintWrd.PrintWord(currentLettersGuessed, randomWord);
 
-                if (currentLettersRight == randomWord.Length) //Om alla bokstäver är gissade rätt
+                if (currentLettersRight == randomWord.Length) // Om alla bokstäver är gissade rätt
                 {
                     Console.Clear(); // Rensa konsollen så det inte blir dubblett av gubben
                     Console.WriteLine("VINST!");
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben
-                    PrintWrd.PrintWord(currentLettersGuessed, randomWord); //Skriver ut ordet under gubben
+                    PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nGrattis, du vann! Ordet var: {randomWord}"); // skriv ut vid vinst
-                    break; // avsluta programmet
+                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta");
                 }
 
                 // Kontrollera om spelaren har förlorat
-                if (amountOfTimesWrong == 6) //Ifall spelaren gissat fel 6 gånger
+                if (amountOfTimesWrong == 6) // Ifall spelaren gissat fel 6 gånger
                 {
                     Console.Clear(); // Rensa konsollen så det inte blir dubblett av gubben
                     Console.WriteLine("FÖRLUST!");
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben innan förlora texten kommer
-                    PrintWrd.PrintWord(currentLettersGuessed, randomWord); //Skriver ut ordet under gubben
+                    PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nDu förlorade! Ordet var: {randomWord}"); // Skriv ut vid förlust
-                    break; // Avsluta programmet
+                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta");
                 }
             }
+        }
 
-            Console.WriteLine("\nSpelet är över! Tack för att du spelade :)");
+        static bool PlayAgain()
+        {
+            Console.Write("\nDitt val: ");
+            string? input = Console.ReadLine();
+            if (input == "1")
+            {
+                return true; // Spela igen
+            }
+            else if (input == "2")
+            {
+                return false; // Avsluta
+            }
+            else
+            {
+                Console.WriteLine("Ogiltigt val. Välj 1 eller 2.");
+                return PlayAgain(); // Fråga igen om ogiltigt val
+            }
         }
     }
 }
