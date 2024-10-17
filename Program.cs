@@ -67,7 +67,7 @@ namespace HangmanProject
                     continue;
                 }
 
-                char letterGuessed = input.Trim()[0];
+                char letterGuessed = input.Trim()[0]; //så att endast första bokstaven gissas på ifall du skriver in fler än 1
 
                 // Kontrollera om bokstaven redan har gissats
                 if (currentLettersGuessed.Contains(letterGuessed))
@@ -112,7 +112,7 @@ namespace HangmanProject
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben innan förlora texten kommer
                     PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nDu förlorade! Ordet var: {randomWord}"); // Skriv ut vid förlust
-                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta");
+                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta.");
                 }
             }
         }
