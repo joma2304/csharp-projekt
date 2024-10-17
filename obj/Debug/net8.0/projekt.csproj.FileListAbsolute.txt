@@ -1,0 +1,14 @@
+/Users/johanmagnusson/Desktop/C#/projekt/bin/Debug/net8.0/projekt
+/Users/johanmagnusson/Desktop/C#/projekt/bin/Debug/net8.0/projekt.deps.json
+/Users/johanmagnusson/Desktop/C#/projekt/bin/Debug/net8.0/projekt.runtimeconfig.json
+/Users/johanmagnusson/Desktop/C#/projekt/bin/Debug/net8.0/projekt.dll
+/Users/johanmagnusson/Desktop/C#/projekt/bin/Debug/net8.0/projekt.pdb
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.GeneratedMSBuildEditorConfig.editorconfig
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.AssemblyInfoInputs.cache
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.AssemblyInfo.cs
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.csproj.CoreCompileInputs.cache
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.dll
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/refint/projekt.dll
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.pdb
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/projekt.genruntimeconfig.cache
+/Users/johanmagnusson/Desktop/C#/projekt/obj/Debug/net8.0/ref/projekt.dll
