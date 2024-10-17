@@ -14,7 +14,9 @@ namespace HangmanProject
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 1)
             {
@@ -24,7 +26,9 @@ namespace HangmanProject
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 2)
             {
@@ -34,7 +38,9 @@ namespace HangmanProject
                 Console.WriteLine(" |     |");
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 3)
             {
@@ -44,7 +50,9 @@ namespace HangmanProject
                 Console.WriteLine("/|     |");
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 4)
             {
@@ -54,7 +62,9 @@ namespace HangmanProject
                 Console.WriteLine("/|\\    |");
                 Console.WriteLine("       |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 5)
             {
@@ -64,7 +74,9 @@ namespace HangmanProject
                 Console.WriteLine("/|\\    |");
                 Console.WriteLine("/      |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
             else if (wrong == 6)
             {
@@ -74,7 +86,9 @@ namespace HangmanProject
                 Console.WriteLine("/|\\    |");
                 Console.WriteLine("/ \\    |");
                 Console.WriteLine("       |");
-                Console.WriteLine("    ====");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
             }
         }
     }
