@@ -17,6 +17,7 @@ namespace HangmanProject
 
         static void PlayGame()
         {
+            //För att åäö ska fungera
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
@@ -97,7 +98,7 @@ namespace HangmanProject
                 if (currentLettersRight == randomWord.Length) // Om alla bokstäver är gissade rätt
                 {
                     Console.Clear(); // Rensa konsollen så det inte blir dubblett av gubben
-                    Console.WriteLine("VINST!");
+                    Console.WriteLine("VINST :)");
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben
                     PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nGrattis, du vann! Ordet var: {randomWord}"); // skriv ut vid vinst
@@ -108,7 +109,7 @@ namespace HangmanProject
                 if (amountOfTimesWrong == 6) // Ifall spelaren gissat fel 6 gånger
                 {
                     Console.Clear(); // Rensa konsollen så det inte blir dubblett av gubben
-                    Console.WriteLine("FÖRLUST!");
+                    Console.WriteLine("FÖRLUST :(");
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben innan förlora texten kommer
                     PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nDu förlorade! Ordet var: {randomWord}"); // Skriv ut vid förlust

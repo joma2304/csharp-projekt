@@ -14,7 +14,7 @@ namespace HangmanProject
             {
                 if (guessedLetters.Contains(i))
                 {
-                    Console.Write(i + " ");
+                    Console.Write(i + " "); //Bokstaven + mellanslag skrivs ut
                     rightLetters += 1;
                 }
                 else
