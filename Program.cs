@@ -8,37 +8,104 @@ namespace HangmanProject
     {
         static void Main(string[] args)
         {
-            // Huvudloop för spelet
             do
             {
-                PlayGame(); // Starta spelet
-            } while (PlayAgain()); // Kolla om spelaren vill spela igen
+                ShowMainMenu(); // Visa huvudmenyn
+            } while (true); // Huvudmenyn är en oändlig loop
         }
+
+        static void ShowMainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("H U V U D M E N Y");
+            Console.WriteLine("-----------------");
+            Console.WriteLine("1. Spela Hängagubbe");
+            Console.WriteLine("2. Hantera spelets ord");
+            Console.WriteLine("3. Avsluta");
+
+            Console.Write("\nDitt val: ");
+            string? input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    PlayGame(); // Starta spelet
+                    break;
+                case "2":
+                    ManageWords(); // hantera orden
+                    break;
+                case "3":
+                    Console.Clear(); // Rensa konsolen
+                    Environment.Exit(0); // Avsluta programmet
+                    break;
+                default:
+                    Console.WriteLine("Ogiltigt val. Vänligen välj 1, 2 eller 3. Tryck på valfri tangent för att testa igen.");
+                    Console.ReadKey(); // Vänta på att användaren trycker på en tangent
+                    break;
+            }
+        }
+
+        static void ManageWords()
+        {
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Hantera ord");
+                Console.WriteLine("1. Visa alla ord");
+                Console.WriteLine("2. Lägga till ett nytt ord");
+                Console.WriteLine("3. Ta bort ett ord");
+                Console.WriteLine("4. Återgå till huvudmenyn");
+
+                Console.Write("\nDitt val: ");
+                string? input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        WordManager.ShowAllWords(); // Visa alla tillagda ord
+                        break;
+                    case "2":
+                        WordManager.AddWords(); // Lägga till ett nytt ord
+                        break;
+                    case "3":
+                        WordManager.RemoveWord(); // Ta bort ett ord
+                        break;
+                    case "4":
+                        return; // Tillbaks till huvudmenyn
+                    default:
+                        Console.WriteLine("Ogiltigt val. Vänligen välj 1, 2, 3 eller 4.");
+                        break;
+                }
+            } while (true);
+        }
+
 
         static void PlayGame()
         {
-            //För att åäö ska fungera
+            // För att åäö ska fungera
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
             Random random = new Random();
-            List<string> wordDictionary = new List<string>
+            List<string> wordDictionary = WordManager.LoadWords(); // Hämta ord från WordManager och lägger till i wordDictionary
+
+            if (wordDictionary.Count == 0) //Ifall det inte finns några ord tillagda
             {
-                "bord", "stol", "sked", "bok", "säng", "dator", "bil", "cykel", "gitarr",
-                "boll", "väska", "dusch", "penna", "glas", "skärm", "spegel", "kudde",
-                "tårta", "blomma", "tavla", "klänning", "keps", "soffa",
-                "telefon", "kamera", "klocka", "sax", "lampa", "filt", "tallrik", "sko",
-                "nyckel", "gitarr", "tröja", "fjäder", "hink", "handduk", "bälte", "hatt"
-            };
+                Console.WriteLine("Inga ord tillgängliga att spela med. Lägga till ord först för att spela.");
+                Console.WriteLine("\nTryck på valfri tangent för att återgå till huvudmenyn.");
+                Console.ReadKey();
+                return;
+            }
 
-            int index = random.Next(wordDictionary.Count);
-            string randomWord = wordDictionary[index];
+            int index = random.Next(wordDictionary.Count); //slumpat index från ordlistan
+            string randomWord = wordDictionary[index]; //Hämtar slumpat ord med hjälp av det slumpade indexet
 
-            int lengthOfWordToGuess = randomWord.Length;
-            int amountOfTimesWrong = 0;
-            List<char> currentLettersGuessed = new List<char>();
-            int currentLettersRight = 0;
+            int lengthOfWordToGuess = randomWord.Length; //Längden på det slumpade ordet
+            int amountOfTimesWrong = 0; //Antalet fel gissningar (börjar på 0)
+            List<char> currentLettersGuessed = new List<char>(); //Lista för bokstäver som gissats på
+            int currentLettersRight = 0; // Antalet rätt gissningar (börjar på 0)
 
+            //Sålänge antalet fel gissningar inte är 6 och antalet rätt gissningar inte är lika många som ordets längd
             while (amountOfTimesWrong != 6 && currentLettersRight != lengthOfWordToGuess)
             {
                 Console.Clear(); // Rensa skärmen
@@ -68,7 +135,7 @@ namespace HangmanProject
                     continue;
                 }
 
-                char letterGuessed = input.Trim()[0]; //så att endast första bokstaven gissas på ifall du skriver in fler än 1
+                char letterGuessed = char.ToLower(input.Trim()[0]);//så att endast första bokstaven gissas på ifall du skriver in fler än 1 och så att den blir till liten bokstav
 
                 // Kontrollera om bokstaven redan har gissats
                 if (currentLettersGuessed.Contains(letterGuessed))
@@ -102,7 +169,8 @@ namespace HangmanProject
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben
                     PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nGrattis, du vann! Ordet var: {randomWord}"); // skriv ut vid vinst
-                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta");
+                    Console.WriteLine("\nTryck på valfri tangent för att återgå till huvudmenyn.");
+                    Console.ReadKey();
                 }
 
                 // Kontrollera om spelaren har förlorat
@@ -113,31 +181,14 @@ namespace HangmanProject
                     PrintHang.PrintHangman(amountOfTimesWrong); // Rita hänggubben innan förlora texten kommer
                     PrintWrd.PrintWord(currentLettersGuessed, randomWord); // Skriver ut ordet under gubben
                     Console.WriteLine($"\nDu förlorade! Ordet var: {randomWord}"); // Skriv ut vid förlust
-                    Console.WriteLine("\nTryck 1 för att spela igen, tryck 2 för att avsluta.");
+                    Console.WriteLine("\nTryck på valfri tangent för att återgå till huvudmenyn.");
+                    Console.ReadKey();
                 }
-            }
-        }
-
-        static bool PlayAgain()
-        {
-            Console.Write("\nDitt val: ");
-            string? input = Console.ReadLine();
-            if (input == "1")
-            {
-                return true; // Spela igen
-            }
-            else if (input == "2")
-            {
-                return false; // Avsluta
-            }
-            else
-            {
-                Console.WriteLine("Ogiltigt val. Välj 1 eller 2.");
-                return PlayAgain(); // Fråga igen om ogiltigt val
             }
         }
     }
 }
+
 
 
 
