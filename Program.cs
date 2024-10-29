@@ -54,7 +54,7 @@ namespace HangmanProject
                 Console.WriteLine("1. Visa alla ord");
                 Console.WriteLine("2. Lägga till ett nytt ord");
                 Console.WriteLine("3. Ta bort ett ord");
-                Console.WriteLine("4. Återgå till huvudmenyn");
+                Console.WriteLine("4. Gå tillbaks till huvudmenyn");
 
                 Console.Write("\nDitt val: ");
                 string? input = Console.ReadLine();
