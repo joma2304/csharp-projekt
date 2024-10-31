@@ -106,7 +106,7 @@ namespace HangmanProject
             int currentLettersRight = 0; // Antalet rätt gissningar (börjar på 0)
 
             //Sålänge antalet fel gissningar inte är 6 och antalet rätt gissningar inte är lika många som ordets längd
-            while (amountOfTimesWrong != 6 && currentLettersRight != lengthOfWordToGuess)
+            while (amountOfTimesWrong != 10 && currentLettersRight != lengthOfWordToGuess)
             {
                 Console.Clear(); // Rensa skärmen
                 Console.WriteLine("Välkommen till Hängagubbe :)");
@@ -174,7 +174,7 @@ namespace HangmanProject
                 }
 
                 // Kontrollera om spelaren har förlorat
-                if (amountOfTimesWrong == 6) // Ifall spelaren gissat fel 6 gånger
+                if (amountOfTimesWrong == 10) // Ifall spelaren gissat fel 10 gånger
                 {
                     Console.Clear(); // Rensa konsollen så det inte blir dubblett av gubben
                     Console.WriteLine("FÖRLUST :(");

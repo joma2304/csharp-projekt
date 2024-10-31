@@ -6,7 +6,55 @@ namespace HangmanProject
     {
         public static void PrintHangman(int wrong) //skriva ut gubben i konsollen
         {
-            if (wrong == 0) //Om 0 fel skrivs själva ställningen ut
+            if (wrong == 0) //Om 0 
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
+            else if (wrong == 1) //Om 1 fel
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("||    ||");
+            }
+            else if (wrong == 2) //Om 2 fel
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
+            }
+            else if (wrong == 3) //Om 3 fel
+            {
+                Console.WriteLine("");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("========");
+                Console.WriteLine("||    ||");
+            }
+            else if (wrong == 4) //Om 4 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -18,7 +66,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 1) //Om ett fel skrivs huvudet ut
+            else if (wrong == 5) //Om 5 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -30,7 +78,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 2) //Om 2 fel skrivs magen ut
+            else if (wrong == 6) //Om 6 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -42,7 +90,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 3) // Om 3 fel skrivs en arm ut
+            else if (wrong == 7) // Om 7 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -54,7 +102,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 4) //Om 4 fel skrivs en arm till ut
+            else if (wrong == 8) //Om 8 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -66,7 +114,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 5) //Om 5 fel skrivs ett ben ut
+            else if (wrong == 9) //Om 9 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
@@ -78,7 +126,7 @@ namespace HangmanProject
                 Console.WriteLine("========");
                 Console.WriteLine("||    ||");
             }
-            else if (wrong == 6) // Om 6 fel skrivs hela gubben ut
+            else if (wrong == 10) // Om 10 fel
             {
                 Console.WriteLine("\n +-----+");
                 Console.WriteLine(" |     |");
